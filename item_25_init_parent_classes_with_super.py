@@ -52,6 +52,8 @@ class OneWay(MyBaseClass, TimesTwo, PlusFive):
 
 foo = OneWay(5)
 print("First ordering is (5*2)+5=", foo.value)
+
+
 # First ordering is (5*2)+5= 15
 
 
@@ -73,6 +75,8 @@ class AnotherWay(MyBaseClass, PlusFive, TimesTwo):
 
 bar = AnotherWay(5)
 print("Second ordering still is ", bar.value)
+
+
 # Second ordering still is  15
 
 
@@ -108,6 +112,8 @@ class ThisWay(TimesFive, PlusTwo):
 
 foo = ThisWay(5)
 print("Should be (5*5)+2 = 27 but is ", foo.value)
+
+
 # Should be (5*5)+2 = 27 but is  7
 
 
@@ -161,6 +167,8 @@ print("Should be 5*(5+2) = 35 and is ", foo.value)
 
 
 pprint(GoodWay.mro())
+
+
 # [<class '__main__.GoodWay'>,
 #  <class '__main__.TimesFiveCorrect'>,
 #  <class '__main__.PlusTwoCorrect'>,
@@ -204,7 +212,6 @@ class Implicit(MyBaseClass):
 
 
 assert Explicit(10).value == Implicit(10).value
-
 
 # This works because Python 3 lets you reliably reference the current class
 # in methods using the __class__ variable. This doesn't work in Python 2
